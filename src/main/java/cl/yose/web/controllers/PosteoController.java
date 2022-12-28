@@ -16,7 +16,6 @@ import cl.yose.web.services.UsuarioServiceImpl;
 
 @Controller
 public class PosteoController {
-	
 	@Autowired
 	PosteoServiceImpl posteoServiceImpl;
 	
@@ -39,5 +38,4 @@ public class PosteoController {
 		
 		return "home.jsp";
 	}
-	
 }

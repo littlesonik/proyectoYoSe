@@ -25,9 +25,9 @@
     <!--agregamos el jquery-->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <!--agregamos el bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Home Yose!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<title>Home Yose!</title>
     <style>
         .mainCentral{
             display: flex;
@@ -39,12 +39,7 @@
         .container {
             background-color: #1D2231;
         }
-        .h7 {
-            font-size: 0.8rem;
-        }
-        .gedf-wrapper {
-            margin-top: 0.97rem;
-        }
+        
         @media (min-width: 992px) {
             .gedf-main {
                 padding-left: 4rem;
@@ -62,78 +57,7 @@
         .Carta {
             background-color: #1D2231;
         }
-        /*Estilos desplegable de comentario*/
-        body {
-            background: #EEEEEE;
-        }
-
-        .box-info.full {
-            padding: 0px;
-        }
-
-        .box-info:hover {
-            color: #393E48;
-        }
-
-        .box-info {
-            position: relative;
-            padding: 15px;
-            background: #fff;
-            color: #5b5b5b;
-            margin-bottom: 20px;
-            -webkit-transition: All 0.4s ease;
-            -moz-transition: All 0.4s ease;
-            transition: All 0.4s ease;
-            background: #FFFFFF;
-            margin-top: 20px;
-        }
-
-
-        .box-info .nav-tabs li.active a,
-        .box-info .nav-tabs li.active a:hover,
-        .box-info .nav-tabs li.active a:focus {
-            cursor: default;
-            border-top: none;
-            border-right: none;
-            border-left: none;
-            border-bottom: none;
-            background-color: #ffffff;
-            color: #1B1E24;
-        }
-
-        .box-info .nav-tabs li.active a i,
-        .box-info .nav-tabs li.active a:hover i,
-        .box-info .nav-tabs li.active a:focus i {
-            color: #212121;
-        }
-
-        .box-info .nav-tabs li a i {
-            color: #fff;
-        }
-
-        .box-info.full .box-footer {
-            padding: 20px 20px 15px 20px;
-        }
-
-        .box-info .media-list {
-            margin-top: 30px;
-        }
-
-        .box-info .media-list .media {
-            padding: 5px 20px;
-            border-bottom: 1px solid #eaeaea;
-        }
-
-        .box-info .media-list .media .media-object {
-            width: 50px;
-        }
-
-        .scroll-widget {
-            overflow: hidden;
-            width: auto;
-            height: 325px;
-        }
-        
+        /*Estilos desplegable de comentario*/       
         .stt {
 		  position: fixed;
 		  right: 1rem;
@@ -145,11 +69,16 @@
 		  box-shadow: 0 0.25rem 0.5rem 0 gray;
 		  opacity: 0.7;
 		}
-		/*header{
-		position: sticky;
-		top: 0;
-		background-color: rgb(29, 34, 49);
-		}*/
+		
+		#scrollComentario{
+            height: 250px;
+            overflow-x: hidden; /*para manejar todo lo que se desvorda del contenedor*/
+            overflow-y: scroll;
+            
+        }
+        #scrollComentario::-webkit-scrollbar {
+            display: none;
+        }
 		
     </style>
 
@@ -169,7 +98,7 @@
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-label="Toggle navigation" style="background-color: #FFac31;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -190,7 +119,6 @@
                             <button type="submit" class="btn btn-outline-warning">Filtrar</button>
                             </form>
                         </li>
-                            
                     </ul>
                     <form action="/buscar" method="post" class="d-flex" role="search">
                         <input name="palabraClave" value="${palabraClave}" id="palabraClave" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" required>
@@ -204,7 +132,7 @@
                             </a>
                                 
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Perfil Usuario</a></li>
+                                <li><a class="dropdown-item" href="/home/perfil">Perfil Usuario</a></li>
                                 <li><a class="dropdown-item" href="#">Configuración</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -223,7 +151,7 @@
         data-bs-target="#staticBackdrop" width="200px" style="margin-left: 15%;">
         <br>
         <div class="mainCentral">
-            <div class="col-md-6 gedf-main">
+           <div class="col-md-6 gedf-main">
                 <!--- \\\\\\\Post-->
                 <c:forEach items="${listaPosteos}" var="posteo">
                     <div class="card gedf-card" id="Carta">
@@ -248,7 +176,8 @@
                                     <h5><c:out value="${posteo.titulo}"></c:out></h5>
                                 <div class="ml-2"><!--Aqui se muestra los datos de categoría el posteo-->
                                         <div class="h6 text-muted">
-                                            <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
+                                            <c:out value="Categoria: ${posteo.categoria.detalleCategoria}"></c:out>
+                                            <c:out value="| Tipo de publicación: ${posteo.typePosteo.tipo}"></c:out>
                                         </div>
                                 </div>
                                     </div>
@@ -273,49 +202,33 @@
                                         Comentarios
                                     </button>
                                 </div>
+                                <!-- Vista de los comentarios al desplegarse -->
                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="card-body">
                                         <div class="coment-bottom bg-white p-2 px-4">
-                                            <div class="d-flex flex-row add-comment-section mt-4 mb-4">
-                                                <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-                                                <input type="text" class="form-control mr-3" placeholder="Añadir comentario">
-                                                <button class="btn btn-primary" type="button">Comentar</button>
-                                            </div>
-                                            <div class="commented-section mt-2">
-                                                <div class="d-flex flex-row align-items-center commented-user">
+                                            <form action="/comentarios" method="post">
+                                                <div class="d-flex flex-row add-comment-section mt-4 mb-4">
                                                     <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-                                                    <h5 class="mr-2">
-                                                    	Pablito
-                                                    </h5>
+                                                    <input type="text" class="form-control mr-3" placeholder="Añadir comentario" id="texto" name="texto">
+                                                    <input type="hidden" name="posteo" value="${posteo.id}">
+                                                    <button class="btn btn-primary" type="submit">Comentar</button>
                                                 </div>
-                                                <div class="comment-text-sm">
-                                                	Hola
-                                                </div><br>
-                                                <button class="btn btn-link" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    Todos los comentarios
-                                                </button>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="d-flex flex-row align-items-center commented-user">
-                                                                    <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-                                                                    <h5 class="mr-2">Corey oates</h5>
-                                                                </div>
-                                                                <div class="comment-text-sm">Jajajaja muy bueno la publicación, amasaste</div><br>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            </form>
+                                            <div class="commented-section mt-2" >
+                                            	<div id="scrollComentario">
+	                                                <c:forEach items="${posteo.comentarios}" var="comentario">
+	                                                    <div class="d-flex flex-row align-items-center commented-user">
+	                                                        <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
+	                                                        <h5 class="mr-2">
+	                                                            <c:out value="${comentario.usuario.nombre}"></c:out>
+	                                                            <c:out value="${comentario.usuario.apellido}"></c:out>
+	                                                        </h5>
+	                                                    </div>
+	                                                    <div class="comment-text-sm">
+	                                                        <c:out value="${comentario.texto}"></c:out>
+	                                                    </div><br>
+	                                                </c:forEach>
+                                            	</div>
                                             </div>
                                         </div>
                                     </div>
@@ -337,7 +250,7 @@
                         </h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="card-link text-muted"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a>
+                        <a href="/home/perfil" class="card-link text-muted"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a>
                         <hr>
                         <a href="#" class="card-link text-muted"><i class="fa fa-bell-o" aria-hidden="true"></i>Notificaciones</a>
                         <hr>
@@ -362,6 +275,16 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                     <form action="/home" method="post"> <!--introducimos la rura en la cual generara la accion-->
+                                        <!-- aqui empieza el select del tipo posteo -->
+                                        <div class="mb-3">
+		                                    <select name="tipoPosteo" id="tipoPosteo" class="form-select">
+								                <option value= "0" selected>Tipo de publicacion</option>
+								                <c:forEach var="typeposteo" items="${listaTipoPosteo}">
+								                <option value="${typeposteo.id}">${typeposteo.tipo}</option>
+								                </c:forEach>
+								            </select>
+		                                </div>
+		                                <!-- aqui termina el select del tipo posteo -->
                                         <div class="mb-3">
                                                 <select name="detalleCategoria" id="categoria" class="form-select">
                                                     <option value= "0" selected>Categorías</option>
@@ -398,8 +321,9 @@
     </main>
 
     <!--agregamos el js jquery-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
