@@ -20,28 +20,42 @@
             justify-content: space-between;
         }
         /*Vista Inicial*/
-            #vistaInicial {
-                
-                width: 118rem;
-                
+        #vistaInicial {
+            height: 350px;
             }
 
+            .textoInicio:hover, .textoInicio:active{
+                transform: scale(1.2)
+                
+            }
             .textoInicio {
                 color: white;
                 position: relative;
                 text-align: center;
-                width: 220px;
+                transition: transform .5s ease;
             }
 
             #texto1 {
-                margin-top: 20px;
+                margin-top: 35px;
+            }
+
+            #bg-image:hover {
+                transform: scale(1.1)
             }
 
             #bg-image {
-                width: 100%;
+                width: 110%;
                 padding: 20px 0px;
-                align-items: center;
-                justify-content: center;
+                margin-top: 100px;
+                transition: transform .5s ease;
+            }
+
+            #btnInicial:hover {
+                transform: scale(1.2)
+            }
+            #btnInicial {
+                margin-top: 20px;
+                transition: transform .5s ease;
             }
         /*termino Vista inicial*/
         /* estilos footer*/
@@ -294,10 +308,13 @@
     <main>
     	<!--Seccion de vista inicial-->
         <div class="container-fluid text-center" id="vistaInicial">
-                <div class="row" style="display: flex; justify-content: center; align-items: center;">
-                    <div class="col-4">
-                    	<h2 id="texto1" class="textoInicio">BIENVENIDO A YoSé!</h2>
-                        <h1 id="texto1" class="textoInicio">Red de aprendizaje colaborativo</h1>
+                <div class="row justify-content-center">
+                    <div class="col-3 align-self-start">
+                    	<h2 id="texto1" class="textoInicio">Bienvenido a YoSé!</h2>
+                    </div>
+                    <div class="col-3 align-self-center">
+                        <h1 id="texto2" class="textoInicio">Red de Aprendizaje Colaborativo</h1>
+                        <a class="btn btn-warning" href="/registro/usuario" role="button" id="btnInicial">Comencemos!</a>
                     </div>
                     <div class="col-4">
                         <img src="../assets/img/Indexfotoo.png" alt="Logo YoSe" id="bg-image">
