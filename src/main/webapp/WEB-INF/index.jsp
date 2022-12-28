@@ -24,9 +24,8 @@
             height: 350px;
             }
 
-            .textoInicio:hover, .textoInicio:active{
+            .textoInicio:hover{
                 transform: scale(1.2)
-                
             }
             .textoInicio {
                 color: white;
