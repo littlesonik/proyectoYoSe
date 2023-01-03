@@ -147,6 +147,9 @@
     </header>
     
     <main>
+    	<div>
+    	
+    	</div>
         <img src="https://i.postimg.cc/d1x98Y3Z/Group-45-Publi-1.png" id=BotonPublicar type="img" class="btn" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop" width="200px" style="margin-left: 15%;">
         <br>
@@ -196,9 +199,13 @@
                         <div id="accordion">
                             <div class="card">
                                 <div class="card-footer" id="headingOne">
-                                    <a href="#" class="card-link"><i class="fa fa-thumbs-o-up"><span class="badge text-bg-secondary"><c:out value="${posteo.valoracionesPosteos.size()}"></c:out></span></i>Valoración</a>
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne" ><i class="fa fa-commenting-o" aria-hidden="true"></i>
+                                    <button class="btn btn-light"><i class="fa fa-thumbs-o-up" aria-hidden="true">
+                                    <span class="badge text-bg-secondary"><c:out value="${posteo.valoracionesPosteos.size()}"></c:out></span></i>
+                                        Valoración
+                                    </button>
+                                    <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne" ><i class="fa fa-commenting-o" aria-hidden="true">
+                                    <span class="badge text-bg-secondary"><c:out value="${posteo.comentarios.size()}"></c:out></span></i>
                                         Comentarios
                                     </button>
                                 </div>
@@ -250,13 +257,13 @@
                         </h5>
                     </div>
                     <div class="card-body">
-                        <a href="/home/perfil" class="card-link text-muted"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a>
+                        <a href="/home/perfil" class="btn btn-light"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a>
                         <hr>
-                        <a href="#" class="card-link text-muted"><i class="fa fa-bell-o" aria-hidden="true"></i>Notificaciones</a>
+                        <a href="#" class="btn btn-light"><i class="fa fa-bell-o" aria-hidden="true"></i>Notificaciones</a>
                         <hr>
-                        <a href="#" class="card-link text-muted"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Guardados</a>
+                        <a href="#" class="btn btn-light"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Guardados</a>
                         <hr>
-                        <a href="#" class="card-link text-muted"><i class="fa fa-handshake-o" aria-hidden="true"></i> Colegas</a>
+                        <a href="#" class="btn btn-light"><i class="fa fa-handshake-o" aria-hidden="true"></i> Colegas</a>
                     </div>
                 </div>
             </div>       	
