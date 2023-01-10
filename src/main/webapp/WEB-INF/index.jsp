@@ -493,7 +493,9 @@
                     <h5>Comparte</h5>
                 </div>
             </div>
+
         <!--parte experimental de mision y vision-->
+        <br> <br>
         <div class="imagem__background" id="AcercaDe">
             <div class="card__giratorio col-md-4">
                 <div class="card__giratorio-conteudo">
@@ -504,8 +506,7 @@
                     <div class="card__giratorio-conteudo--traseira">
                         <h2 class="">MISIÓN</h2>
                         <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
-                        <h2 class="cartao__numeral">Esperamos generar un espacio en el que se realicen conexiones entre personas 
-                        que deseen compartir información o consultar por ella.</h2>
+                        <h2 class="cartao__numeral">Generar un espacio en el que se conecten profesores y estudiantes que deseen compartir información o consultar por ella.</h2>
                     </div>
                 </div>
             </div>
@@ -518,9 +519,9 @@
                     <div class="card__giratorio-conteudo--traseira">
                         <h2 class="">VISIÓN</h2>
                         <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
-                        <h2 class="cartao__numeral">Poder encontrar información de interés en
-                            materias específicas, o tambien resolver 
-                            dudas, fomentando así el espíritu de compartir y recibir conocimiento.</h2>
+                        <h2 class="cartao__numeral">Encontrar información de interés en
+                                asignaturas específicas, o tambien resolver
+                                dudas, fomentando así el espíritu de compartir y recibir conocimiento.</h2>
                     </div>
                 </div>
             </div>
